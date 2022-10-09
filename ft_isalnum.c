@@ -6,13 +6,15 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:12:59 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/09 15:36:01 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/09 16:51:37 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isalnum(int c)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || (c >= 48 && c <= 57))
+	if ((ft_isalpha(c) || ft_isdigit(c))
 		return (1);
 	return (0);
 }
