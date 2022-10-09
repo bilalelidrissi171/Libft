@@ -6,13 +6,13 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:09:22 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/09 15:11:20 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/09 15:25:13 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+int	ft_isdigit(int c)
 {
-	if ((c >= 48 && c <= 57))
-		return (-1);
+	if (c >= 48 && c <= 57)
+		return (1);
 	return (0);
 }
