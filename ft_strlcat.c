@@ -6,13 +6,13 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:48:25 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/09 21:08:30 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/10 13:43:24 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	x;
 	size_t	y;
