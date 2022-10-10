@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:37:51 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/10 15:01:59 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/10 15:22:38 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 // 	char src0[120] = "";
 // 	char _dst0[120] = "";
 // 	char _src0[120] = "";
-
-// 	printf("\n\n%s %s\n\n",dst0,_dst0);
 
 // 	printf("\n\n********** dst : NULL | src : NULL **********\n\n");
 
