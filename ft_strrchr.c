@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:05:45 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/11 15:40:27 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/11 19:54:59 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	x;
 
-	x = ft_strlen(s);
+	x = ft_strlen(s) + 1;
 	while (x--)
 	{
 		if (s[x] == (unsigned char)c)

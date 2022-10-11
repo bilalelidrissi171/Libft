@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 18:30:19 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/11 14:06:38 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/11 19:54:06 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,8 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
+	if (*s == (unsigned char)c)
+		return ((char *)s);
+
 	return (NULL);
 }
