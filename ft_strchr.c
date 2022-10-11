@@ -6,13 +6,9 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 18:30:19 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/10 18:53:08 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/11 12:07:11 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
-{
-
-}
