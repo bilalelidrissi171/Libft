@@ -6,7 +6,7 @@
 #    By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 07:53:41 by bel-idri          #+#    #+#              #
-#    Updated: 2022/10/11 12:15:29 by bel-idri         ###   ########.fr        #
+#    Updated: 2022/10/11 13:45:30 by bel-idri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,18 +62,20 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
+RM = rm -f
+
 all: ${NAME}
 
-${NAME}: ${OBJS}
-	ar -rc ${NAME} ${OBJS}
+$(NAME): $(OBJS)
+	ar -rc $(NAME) $(OBJS)
 
-${OBJS}: ${SRCS}
-	$(CC) ${CFLAGS} -c ${SRCS}
+%.o: %.c
+	$(CC) $(CFLAGS) -c $<
 
 clean:
-	rm -f ${OBJS}
+	$(RM) $(OBJS)
 
 fclean: clean
-	rm -f ${NAME}
+	$(RM) $(NAME)
 
 re: fclean all
