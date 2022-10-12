@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:01:26 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/11 19:42:48 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:17:05 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,36 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	i;
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	size_t count;
+
 
 	i = 0;
-	if (needle == NULL)
+	count = 0;
+	if (needle[0] == '\0')
 		return ((char *)haystack);
-	while(haystack[i])
+	if (ft_strlen(needle) > len)
+		return (NULL);
+	while (i < len - 1)
 	{
-		if(ft_strncmp(haystack + i,needle,len - 1) == 0)
-			return ((char *)haystack + i);
+		j = 0;
+		k = i;
+		while (needle[j] == haystack[k] && len && needle[j] && haystack[k])
+		{
+			count++;
+			j++;
+			k++;
+			len--;
+		}
+
+		if (count == ft_strlen(needle))
+			return ((char *)&haystack[i]);
+		count = 0;
 		i++;
+
 	}
-	return(NULL);
+
+	return (NULL);
 }
-
-// #include <string.h>
-// #include <stdio.h>
-// int	main()
-// {
-// 	const char *s1 = "abcdefgh";
-// 	const char *s2 = "cd";
-// 	printf("%s\n",ft_strnstr(s1,s2,2));
-// 	printf("%s",strnstr(s1,s2,2));
-
-// 	return (0);
-// }
