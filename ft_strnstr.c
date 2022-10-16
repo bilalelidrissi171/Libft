@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:01:26 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/12 17:02:22 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:20:22 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	lh = ft_strlen(haystack);
 	if (ft_strlen(needle) > len)
 		return (NULL);
-	while (i < len - 1 && i < lh)
+	while (i < len - 1 && i <ft_strlen(haystack))
 	{
 		j = 0;
 		k = i;

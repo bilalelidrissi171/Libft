@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 18:24:57 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/14 03:46:02 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/16 14:26:39 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*a;
+
 	a = (unsigned char *)s;
 	while (n)
 	{
