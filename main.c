@@ -1,30 +1,21 @@
 #include <stdio.h>
+#include <string.h>
+#include "libft.h"
 
-int Increment()
-{
-	static int i = 0;
-	i++;
-	return (i);
-}
 int main()
 {
-	{
-		char *p1 = "hello";
-		char p2[] = "hello";
-		int a = Increment();
-		int b = Increment();
-		p1 = "world";
-	}
-	{
-		char *p1 = "hello";
-		char p2[] = "hello";
-		int a = Increment();
-		int b = Increment();
-		p1 = "world";
-		printf("p1 = %p | p2 = %p\n", p1, p2);
-	}
-
-
-
-
+	unsigned char	a[6]  = "bilal";;
+	size_t len = 6;
+	int x = 0;
+	char *p;
+	p = a;
+	// while (len && a[x])
+	// {
+	// 	a[x] = 97;
+	// 	len--;
+	// 	x++;
+	// }
+	// if(len )
+	memset(p,97,20);
+	printf("%s\n",a);
 }

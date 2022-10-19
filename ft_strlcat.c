@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:48:25 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/12 12:53:22 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/19 05:52:35 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t j;
 	size_t k;
 
-	if (dstsize == 0 && !dst)
+	if (dstsize == 0)
 		return (ft_strlen(src));
 	i = ft_strlen(dst);
 	j = ft_strlen(src);
