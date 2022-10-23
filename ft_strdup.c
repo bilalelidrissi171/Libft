@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 01:45:28 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/23 02:12:29 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:18:53 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s1)
 	int		i;
 
 	i = 0;
-	s = (char *)malloc((ft_strlen(s1) + 1)* sizeof(char));
+	s = (char *)malloc((ft_strlen(s1) + 1) * sizeof(char));
 	if (!s)
 		return (NULL);
 	while (s1[i])

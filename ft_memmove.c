@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:04:02 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/19 05:23:58 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/23 10:38:26 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	if (!dst && !src)
 		return (NULL);
-
-	i = 0;
+	i = -1;
 	a = (char *)dst;
 	b = (char *)src;
-
 	if (a > b)
 	{
 		while (len)
@@ -35,11 +33,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		while (i < len)
-		{
+		while (++i < len)
 			a[i] = b[i];
-			i++;
-		}
 	}
 	return (dst);
 }
