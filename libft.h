@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:11:36 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/22 08:39:49 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/23 02:16:22 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
+
 
 typedef struct s_list
 {
