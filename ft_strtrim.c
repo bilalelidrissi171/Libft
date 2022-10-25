@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 12:41:08 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/25 03:38:32 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/25 03:49:40 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = len - start + 1;
 	return (ft_substr(s1,start,len));
 }
-
-// #include <stdio.h>
-
-
-// int main()
-// {
-// 	char *s = ft_strtrim("aakba0123456789aab","akb");
-// 	printf("%s",s);
-// }
