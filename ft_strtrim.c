@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bilal <bilal@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 12:41:08 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/25 03:49:40 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/25 10:31:21 by bilal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		else
 			break;
 	}
+	if (len < start)
+		return (ft_strdup(""));
 	len = len - start + 1;
 	return (ft_substr(s1,start,len));
 }
