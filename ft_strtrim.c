@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 12:41:08 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/24 23:25:08 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/25 03:38:32 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,56 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int	i;
-	size_t			j;
-	char			*str;
+	size_t	start;
+	size_t	len;
+	size_t	index_set;
+	size_t	count;
 
-
-	return (ft_substr(s1,i,j));
+	start = 0;
+	index_set = 0;
+	count = 0;
+	if (!set)
+		return (ft_strdup(s1));
+	if (!s1)
+		return (ft_strdup(""));
+	while (s1[start])
+	{
+		while(index_set < ft_strlen(set))
+		{
+			if (set[index_set] == s1[start])
+				count++;
+			index_set++;
+		}
+		if (count >= 1)
+		{
+			start++;
+			index_set = 0;
+			count = 0;
+		}
+		else
+			break;
+	}
+	index_set = 0;
+	len = ft_strlen(s1) - 1;
+	while (len - start)
+	{
+		while(index_set < ft_strlen(set))
+		{
+			if (set[index_set] == s1[len])
+				count++;
+			index_set++;
+		}
+		if (count >= 1)
+		{
+			len--;
+			index_set = 0;
+			count = 0;
+		}
+		else
+			break;
+	}
+	len = len - start + 1;
+	return (ft_substr(s1,start,len));
 }
 
 // #include <stdio.h>
@@ -27,6 +71,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int main()
 // {
-// 	char *s = ft_strtrim("bbab0a123456789ababa","ab");
+// 	char *s = ft_strtrim("aakba0123456789aab","akb");
 // 	printf("%s",s);
 // }
