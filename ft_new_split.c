@@ -59,11 +59,11 @@ char	**ft_new_split(char const *s, char c){
 	return (tab);
 }
 
-int main()
-{
-	char s1[] = "       ";
-	char **s = ft_new_split(s1, ' ');
-	while (*s){
-		printf("%s\n", *s++);
-	}
-}
+// int main()
+// {
+// 	char s1[] = "       ";
+// 	char **s = ft_new_split(s1, ' ');
+// 	while (*s){
+// 		printf("%s\n", *s++);
+// 	}
+// }
