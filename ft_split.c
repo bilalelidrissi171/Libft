@@ -6,7 +6,7 @@
 /*   By: bilal <bilal@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 05:26:20 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/26 11:04:39 by bilal            ###   ########.fr       */
+/*   Updated: 2022/10/26 15:05:02 by bilal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,28 @@ int		count_words(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
+	int		index;
+	int		start;
+	int		end;
+
+	index = 0;
+	start = 0;
+
+	if (!s || s[0] == '\0' || !c)
+		return (NULL);
+
+	str = (char **)malloc((count_words(s,c) + 1) * sizeof(char *));
+	if (!str)
+		return (NULL);
+
+	while (index < count_words(s,c))
+	{
+		while (s[start])
+		{
+			ks
+		}
+
+	}
 
 
 
