@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 09:24:41 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/27 11:28:30 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/27 11:51:15 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 		for_counter = for_counter / 10;
 		counter++;
 	}
-	str = (char *)malloc((counter + 1) * sizeof(char));
+	str = (char *)ft_calloc((counter + 1) ,sizeof(char));
 	if (!str)
 		return (NULL);
 	if(n < 0)
@@ -43,19 +43,11 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 		n *= (-1);
 	}
-	//printf("%d\n",counter);
-	str[counter] = '\0';
-	counter--;
-	while (counter >= 0 && str[counter] != '-')
+	// printf("%d\n",counter);
+	while (--counter >= 0 && str[counter] != '-')
 	{
-		str[counter--] = (n % 10) + 48;
+		str[counter] = (n % 10) + 48;
 		n /= 10;
 	}
 	return (str);
-
-}
-
-int main()
-{
-	printf("|%s|\n",ft_itoa(42));
 }
