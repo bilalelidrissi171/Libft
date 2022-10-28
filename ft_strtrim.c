@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bilal <bilal@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 12:41:08 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/25 10:31:21 by bilal            ###   ########.fr       */
+/*   Updated: 2022/10/28 09:06:58 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(""));
 	while (s1[start])
 	{
-		while(index_set < ft_strlen(set))
+		while (index_set < ft_strlen(set))
 		{
 			if (set[index_set] == s1[start])
 				count++;
@@ -41,13 +41,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 			count = 0;
 		}
 		else
-			break;
+			break ;
 	}
 	index_set = 0;
 	len = ft_strlen(s1) - 1;
 	while (len - start)
 	{
-		while(index_set < ft_strlen(set))
+		while (index_set < ft_strlen(set))
 		{
 			if (set[index_set] == s1[len])
 				count++;
@@ -60,10 +60,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 			count = 0;
 		}
 		else
-			break;
+			break ;
 	}
 	if (len < start)
 		return (ft_strdup(""));
 	len = len - start + 1;
-	return (ft_substr(s1,start,len));
+	return (ft_substr(s1, start, len));
 }

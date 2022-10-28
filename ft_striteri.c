@@ -6,20 +6,19 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 13:35:40 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/27 14:24:16 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/28 09:02:43 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;
 
 	i = 0;
-
 	if (!s || !f)
-		return;
+		return ;
 	if (s)
 	{
 		while (s[i])

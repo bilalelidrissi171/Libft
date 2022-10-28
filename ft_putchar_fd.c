@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:19:18 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/28 07:48:19 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/28 08:09:57 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (!c)
-		return;
 	write(fd, &c, 1);
 }

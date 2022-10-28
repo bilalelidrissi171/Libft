@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 11:19:06 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/26 04:04:49 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/28 09:08:10 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	i;
+
 	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s))
@@ -28,7 +29,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (len > ft_strlen(s) - start)
 		len = ft_strlen(s) - start;
-	str = (char *)ft_calloc((len + 1) , sizeof(char));
+	str = (char *)ft_calloc((len + 1), sizeof(char));
 	if (!str)
 		return (NULL);
 	while (i < len)

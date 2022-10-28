@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 12:03:55 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/27 14:16:11 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/28 09:05:42 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,39 +19,16 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	i = 0;
-
 	if (!s || !f)
 		return (NULL);
-
 	len = ft_strlen(s);
-
 	str = (char *)ft_calloc(len + 1, sizeof(char));
-	if(!str)
+	if (!str)
 		return (NULL);
-
 	while (s[i])
 	{
-		str[i] = (*f)(i,s[i]);
+		str[i] = (*f)(i, s[i]);
 		i++;
 	}
-
 	return (str);
 }
-
-// #include <stdio.h>
-
-// char hello(unsigned int i, char s)
-// {
-// 	s = i + '0';
-// 	return s;
-// }
-
-
-// int main()
-// {
-// 	char *s = "bilal";
-// 	char *str = ft_strmapi(s,hello);
-
-// 	printf("|%s|\n",str);
-
-// }

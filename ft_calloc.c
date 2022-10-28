@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 09:55:41 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/28 07:21:42 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/28 08:47:01 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,3 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(p, count * size);
 	return (p);
 }
-
-
-// int main()
-// {
-// 	size_t	size = 1073741824;
-// 	size_t	count = 1;
-// 	int i = 1;
-
-// 	while (malloc(size * count))
-// 	{
-// 		printf("%d\n",i++);
-// 	}
-
-// 	return 0;
-// }

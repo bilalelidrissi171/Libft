@@ -6,23 +6,21 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 05:26:20 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/27 09:24:16 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/28 09:02:09 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
 	int	index;
 	int	counter;
 
 	index = 0;
 	counter = 0;
-
 	while (s[index] == c)
 		index++;
-
 	while (s[index])
 	{
 		if (s[index] == c)
@@ -34,11 +32,11 @@ int		count_words(char const *s, char c)
 		else
 			index++;
 	}
-
 	if (s[index - 1] != c)
 		counter++;
 	return (counter);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
@@ -51,10 +49,10 @@ char	**ft_split(char const *s, char c)
 	start = 0;
 	if (!s)
 		return (NULL);
-	str = (char **)malloc((count_words(s,c) + 1) * sizeof(char *));
+	str = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!str)
 		return (NULL);
-	while (index < count_words(s,c) && s[start])
+	while (index < count_words(s, c) && s[start])
 	{
 		start = end;
 		while (s[start] && s[start] == c)
@@ -62,7 +60,7 @@ char	**ft_split(char const *s, char c)
 		end = start;
 		while (s[end] && s[end] != c)
 			end++;
-		str[index++] = ft_substr(s, start, end-start);
+		str[index++] = ft_substr(s, start, end - start);
 	}
 	str[index] = NULL;
 	return (str);
