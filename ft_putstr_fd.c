@@ -6,13 +6,15 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:22:29 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/27 17:30:11 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/28 07:38:09 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	uft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-
+	if (!s)
+		return;
+	write(fd, s, ft_strlen(s));
 }
