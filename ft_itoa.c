@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 08:48:55 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/28 08:58:15 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/28 15:16:12 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,32 @@ static char	*check_first(int n)
 	return (NULL);
 }
 
-char	*ft_itoa(int n)
+static int	ft_counter(int n)
 {
-	int		for_counter;
-	int		counter;
-	int		index;
-	char	*str;
+	int	counter;
 
 	counter = 0;
-	for_counter = n;
-	index = 0;
-	if (n == -2147483648 || n == 0)
-		return (check_first(n));
 	if (n < 0)
-		counter++;
-	while (for_counter)
 	{
-		for_counter = for_counter / 10;
+		counter++;
+		n *= (-1);
+	}
+	while (n > 0)
+	{
+		n /= 10;
 		counter++;
 	}
+	return (counter);
+}
+
+char	*ft_itoa(int n)
+{
+	int		counter;
+	char	*str;
+
+	if (n == -2147483648 || n == 0)
+		return (check_first(n));
+	counter = ft_counter(n);
 	str = (char *)ft_calloc((counter + 1), sizeof(char));
 	if (!str)
 		return (NULL);
