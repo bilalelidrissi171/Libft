@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 08:42:44 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/29 09:51:20 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/29 10:56:42 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,13 @@ static int	ft_count_words(char const *s, char c)
 	return (counter);
 }
 
-static void	ft_free(char **str, int index)
+static void	ft_free(char **str)
 {
-	while (index-- > 0)
-		free(str[index]);
+	int	index;
+
+	index = 0;
+	while (str[index])
+		free(str[index++]);
 	free(str);
 }
 
@@ -66,8 +69,8 @@ static char	**ft_my_split(char const *s, char c, int start, int end)
 		str[index] = ft_substr(s, start, end - start);
 		if (!str[index])
 		{
-			ft_free(str, index);
-			return (str);
+			ft_free(str);
+			return (NULL);
 		}
 		index++;
 	}
