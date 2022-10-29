@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 08:42:44 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/29 09:30:01 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/29 09:51:20 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,17 @@ static int	ft_count_words(char const *s, char c)
 
 static void	ft_free(char **str, int index)
 {
-	while (index >= 0)
-		free(str[index--]);
+	while (index-- > 0)
+		free(str[index]);
 	free(str);
 }
 
-static char	**ft_my_split(char const *s, char c, int index, int start, int end)
+static char	**ft_my_split(char const *s, char c, int start, int end)
 {
 	char	**str;
+	int		index;
 
+	index = 0;
 	str = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
 	if (!str)
 		return (NULL);
@@ -64,11 +66,8 @@ static char	**ft_my_split(char const *s, char c, int index, int start, int end)
 		str[index] = ft_substr(s, start, end - start);
 		if (!str[index])
 		{
-			if (index == 0)
-				free(str);
-			else
-				ft_free(str, index);
-			return(str);
+			ft_free(str, index);
+			return (str);
 		}
 		index++;
 	}
@@ -79,24 +78,15 @@ static char	**ft_my_split(char const *s, char c, int index, int start, int end)
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
-	int		index;
 	int		start;
 	int		end;
 
-	index = 0;
 	end = 0;
 	start = 0;
-
 	if (!s)
 		return (NULL);
-	str = ft_my_split(s, c, index, start, end);
+	str = ft_my_split(s, c, start, end);
 	if (!str)
 		return (NULL);
 	return (str);
 }
-
-// int main()
-// {
-// 	char **s = ft_split("hello!",' ');
-// 	printf("|%s|%s|\n",s[0],s[1]);
-// }
