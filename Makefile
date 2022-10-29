@@ -6,7 +6,7 @@
 #    By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 07:53:41 by bel-idri          #+#    #+#              #
-#    Updated: 2022/10/12 13:11:29 by bel-idri         ###   ########.fr        #
+#    Updated: 2022/10/29 10:20:39 by bel-idri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,6 @@ SRCS = ft_atoi.c \
 	ft_isdigit.c \
 	ft_isprint.c \
 	ft_itoa.c \
-	ft_lstadd_back.c \
-	ft_lstadd_front.c \
-	ft_lstclear.c \
-	ft_lstdelone.c \
-	ft_lstiter.c \
-	ft_lstlast.c \
-	ft_lstmap.c \
-	ft_lstnew.c \
-	ft_lstsize.c \
 	ft_memchr.c \
 	ft_memcmp.c \
 	ft_memcpy.c \
@@ -54,9 +45,22 @@ SRCS = ft_atoi.c \
 	ft_strtrim.c \
 	ft_substr.c \
 	ft_tolower.c \
-	ft_toupper.c \
+	ft_toupper.c
+
+SRCSB = ft_lstadd_back.c \
+	ft_lstadd_front.c \
+	ft_lstclear.c \
+	ft_lstdelone.c \
+	ft_lstiter.c \
+	ft_lstlast.c \
+	ft_lstmap.c \
+	ft_lstnew.c \
+	ft_lstsize.c
+
 
 OBJS = ${SRCS:.c=.o}
+OBJSB = ${SRCSB:.c=.o}
+
 
 CC = cc
 
@@ -72,6 +76,9 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $<
 
+bonus: $(OBJSB)
+	ar -rc $(NAME) $(OBJSB)
+
 clean:
 	$(RM) $(OBJS)
 
@@ -79,3 +86,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY:	all clean fclean re bonus
