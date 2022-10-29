@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:43:56 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/29 12:43:59 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/29 16:49:56 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (!new)
+		return ;
 	if (lst)
 		new->next = *lst;
 	*lst = new;

@@ -6,17 +6,19 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:44:26 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/29 12:50:16 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/29 17:00:05 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// t_list	*ft_lstlast(t_list *lst)
-// {
-// 	while (!lst)
-// 	{
-// 		lst = lst;
-// 	}
-
-// }
+t_list	*ft_lstlast(t_list *lst)
+{
+	while (lst)
+	{
+		if (!lst->next)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
+}
