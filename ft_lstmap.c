@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:44:32 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/30 11:14:23 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/30 17:41:52 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,29 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*l;
+	t_list	*res;
 	t_list	*node;
+	void	*cont;
 
-	if (!lst || !f || !del)
+	if (!lst || !f || !del || !*f)
 		return (NULL);
-	l = NULL;
+	res = NULL;
 	while (lst)
 	{
-		f(lst->content);
-		node = ft_lstnew(lst->content);
+		cont = f(lst->content);
+		node = ft_lstnew(cont);
 		if (!node)
 		{
-			ft_lstclear(&l, del);
-			break ;
+			del(cont);
+			if (res)
+				ft_lstclear(&res, del);
+			return (NULL);
 		}
-		ft_lstadd_back(&l, node);
+		if (!res)
+			res = node;
+		else
+			ft_lstadd_back(&res, node);
 		lst = lst->next;
 	}
-	return (l);
+	return (res);
 }

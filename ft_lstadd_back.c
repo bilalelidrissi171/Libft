@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:43:38 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/30 12:03:56 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/30 17:39:10 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	l = ft_lstlast(*lst);
 	l->next = new;
 }
-
-
