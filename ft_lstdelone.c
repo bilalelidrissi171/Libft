@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:44:11 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/30 20:34:08 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/30 22:26:43 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	free(lst);
 }
 
-// void del(void *c)
-// {
-// 	free((char *)c);
-// }
+void del(void *c)
+{
+	free((char *)c);
+}
 
 int main()
 {
@@ -33,13 +33,9 @@ int main()
 
 	printf("|%p|%s|\n",&h,h->content);
 
+	ft_lstdelone(h,del);
 
-
-
-
-	ft_lstdelone(h->next,&free);
-
-	printf("|%p|%s|",&h,h->content);
+	printf("|%p|%s|",*h,h->content);
 
 
 }
