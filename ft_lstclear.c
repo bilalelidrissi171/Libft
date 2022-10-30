@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:44:05 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/29 22:32:05 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/30 07:02:59 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 void ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (!*lst)
+	t_list *tmp;
+
+	if (!*lst || !del)
 		return ;
 
-	t_list *l;
-	l = *lst;
-	while (l)
+	while (*lst)
 	{
-		ft_lstdelone(l,del);
-		l = l->next;
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		(*lst) = tmp;
 	}
 }
