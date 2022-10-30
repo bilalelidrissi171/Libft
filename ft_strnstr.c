@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:01:26 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/30 16:17:52 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/30 20:10:22 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	if (needle[0] == '\0')
 		return ((char *)haystack);
 	if (lh == 0)
-		return (0);
+		return (NULL);
 	return (ft_if_match(haystack, needle, len));
 }
