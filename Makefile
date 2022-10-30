@@ -6,7 +6,7 @@
 #    By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 07:53:41 by bel-idri          #+#    #+#              #
-#    Updated: 2022/10/29 10:56:24 by bel-idri         ###   ########.fr        #
+#    Updated: 2022/10/30 07:24:24 by bel-idri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,8 +58,8 @@ SRCSB = ft_lstadd_back.c \
 	ft_lstsize.c
 
 
-OBJS = ${SRCS:.c=.o}
-OBJSB = ${SRCSB:.c=.o}
+OBJS = $(SRCS:.c=.o)
+OBJSB = $(SRCSB:.c=.o)
 
 
 CC = cc
@@ -68,9 +68,11 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-all: ${NAME}
+.PHONY:	all clean fclean re bonus
 
-$(NAME): $(OBJS)
+all: $(NAME)
+
+$(NAME): $(OBJS) $(OBJSB)
 	ar -rc $(NAME) $(OBJS)
 
 %.o: %.c
@@ -80,11 +82,9 @@ bonus: $(OBJSB)
 	ar -rc $(NAME) $(OBJSB)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJSB)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
-.PHONY:	all clean fclean re bonus
