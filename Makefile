@@ -6,7 +6,7 @@
 #    By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 07:53:41 by bel-idri          #+#    #+#              #
-#    Updated: 2022/10/30 07:24:24 by bel-idri         ###   ########.fr        #
+#    Updated: 2022/10/30 15:16:18 by bel-idri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ SRCS = ft_atoi.c \
 	ft_strtrim.c \
 	ft_substr.c \
 	ft_tolower.c \
-	ft_toupper.c
+	ft_toupper.c \
 
 SRCSB = ft_lstadd_back.c \
 	ft_lstadd_front.c \
@@ -55,7 +55,7 @@ SRCSB = ft_lstadd_back.c \
 	ft_lstlast.c \
 	ft_lstmap.c \
 	ft_lstnew.c \
-	ft_lstsize.c
+	ft_lstsize.c \
 
 
 OBJS = $(SRCS:.c=.o)
@@ -68,18 +68,18 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-.PHONY:	all clean fclean re bonus
+AR = ar -rcs
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(OBJSB)
-	ar -rc $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
-%.o: %.c
+bonus: all $(OBJSB)
+	$(AR) $(NAME) $(OBJSB)
+
+%.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $<
-
-bonus: $(OBJSB)
-	ar -rc $(NAME) $(OBJSB)
 
 clean:
 	$(RM) $(OBJS) $(OBJSB)

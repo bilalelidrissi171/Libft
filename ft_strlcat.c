@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:48:25 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/23 10:40:07 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/30 11:55:23 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[i + k] = '\0';
 	return (i + j);
 }
+
+// int main()
+// {
+// 	char s[10] = "bilal;";
+
+
+// }
