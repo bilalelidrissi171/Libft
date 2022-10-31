@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 10:17:18 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/30 19:32:23 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/31 12:31:36 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,3 @@ t_list	*ft_lstnew(void *content)
 	new->next = NULL;
 	return (new);
 }
-
-// int main()
-// {
-// 	t_list *h;
-
-// 	h = NULL;
-
-// 	h = ft_lstnew((char *)"bilal");
-// 	h->next = ft_lstnew((char *)"jjj");
-// 	h->next->next = ft_lstnew((char *)"aaa");
-
-
-// 	while (h)
-// 	{
-// 		printf("%s->",h->content);
-// 		h = h->next;
-// 	}
-// }

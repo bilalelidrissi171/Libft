@@ -6,7 +6,7 @@
 /*   By: bel-idri <bel-idri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:44:43 by bel-idri          #+#    #+#             */
-/*   Updated: 2022/10/30 20:08:35 by bel-idri         ###   ########.fr       */
+/*   Updated: 2022/10/31 12:32:49 by bel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,3 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
-
-// int main()
-// {
-// 	t_list *h;
-
-// 	h = ft_lstnew((char *)"111");
-// 	h->next = ft_lstnew((char *)"222");
-// 	h->next->next = ft_lstnew((char *)"333");
-// 	h->next->next->next = ft_lstnew((char *)"444");
-
-// 	printf("%d\n",ft_lstsize(h));
-// }
